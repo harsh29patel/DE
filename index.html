@@ -19,10 +19,15 @@
             <h2>eFuelhub.com</h2>
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#Home" class="scroll-link">Home</a></li>
+            <li>  <a href="#About" class="scroll-link">About</a></li>
+            <li><a href="#Services" class="scroll-link">Services</a></li>
+            <li><a href="#Contact" class="scroll-link">Contact</a></li>
+          
+<!-- <div id="About">
+    Your content here -->
+    <!-- <p>This is the content you want to scroll to.</p>
+</div> -->
         </ul>
         <button class="login-btn" >Login/Signin</button>
         <button class="register">New User? Register</button>
@@ -38,7 +43,7 @@
         </div>
     </section>
     <section class="section-two">
-        <div class="container">
+        <div class="container" id="Home">
             <p class="paragraph">
                 Introducing eFuelHub.com - the ultimate destination for all your e-fuel needs. As the leading e-fuel
                 station website based in Ahmedabad, GJ, we are revolutionizing the way you refuel your vehicles. Our
@@ -51,9 +56,10 @@
     </section>
 
     <section class="section-three">
-        <div class="container">
+        <div class="container" id="Services">
             <div class="image-container">
-                <img src="C:\Users\Harsh Patel\OneDrive\Desktop\DE\backgroud.jpg"
+                <img src="https://efuelhubcom.mydurable.com/_next/image?url=https%3A%2F%2Fcdn.durable.co%2Fshutterstock%2F3buR6mHw2zwhkIdz2lhZDyTfFOkZEBWOj77qXwemdI978JhTk4MCYlDSImcy7N6g.jpeg&w=1920&q=90"
+                alt="Image 1" class="image">"
                     alt="Image 1" class="image">
                 <h2 class="heading">Locate Nearby E-Fuel Station</h2>
                 <p class="text">Experience seamless and secure transactions with our digital payment options.</p>
@@ -128,7 +134,7 @@
 
     <section class="aboutus">
         <div class="container5">
-            <div class="text5">
+            <div class="text5" id="About">
                 <h2>About Us</h2>
                 <p>Welcome to eFuelHub.com, your premier destination for all your e-fuel station needs. Located in
                     Ahmedabad, GJ, we are dedicated to providing top-quality products and services to fuel your
@@ -150,7 +156,7 @@
 
 
     <section class="contactus">
-        <div class="container6">
+        <div class="container6" id="Contact">
             <h2>Contact Us</h2>
             <form action="#" method="post">
                 <label for="name">Name:</label>
@@ -186,6 +192,28 @@ function locationofyou(){
     window.location.href="location.html"
 }
 document.querySelector('.order-btn').addEventListener('click', locationofyou)
+
+
+
+    // Function to handle smooth scrolling when clicking the link
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.scroll-link').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Get the target element to scroll to
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                // Scroll to the target element
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+
+
 
 
 
